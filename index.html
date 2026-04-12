@@ -920,21 +920,6 @@ footer{padding:36px 72px;border-top:1px solid rgba(79,158,255,0.07);display:flex
           </svg>
         </div>
 
-        <!-- METRICS ROW -->
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px">
-          <div style="background:rgba(79,158,255,0.06);border:1px solid rgba(79,158,255,0.12);border-radius:8px;padding:12px;text-align:center">
-            <div class="syne" style="font-size:18px;font-weight:800;color:var(--green)" id="loc-counter">0</div>
-            <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:rgba(0,255,170,0.45);margin-top:3px;text-transform:uppercase">Microservices</div>
-          </div>
-          <div style="background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.12);border-radius:8px;padding:12px;text-align:center">
-            <div class="syne" style="font-size:18px;font-weight:800;color:var(--cyan)" id="deploy-counter">0</div>
-            <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:rgba(0,229,255,0.4);margin-top:3px;text-transform:uppercase">AI Agents</div>
-          </div>
-          <div style="background:rgba(255,100,50,0.06);border:1px solid rgba(255,100,50,0.12);border-radius:8px;padding:12px;text-align:center">
-            <div class="syne" style="font-size:18px;font-weight:800;color:var(--blue)" id="ml-counter">0</div>
-            <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:rgba(79,158,255,0.45);margin-top:3px;text-transform:uppercase">Team Led</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1415,32 +1400,6 @@ document.querySelectorAll('.scat').forEach(tab=>{
 })();
 
 // ── Counter animation for architecture metrics ──
-(function(){
-  const targets = {
-    'loc-counter': {end:20, suffix:'+'},
-    'deploy-counter': {end:50, suffix:'+'},
-    'ml-counter': {end:3, suffix:''}
-  };
-  const ob = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting) return;
-      Object.entries(targets).forEach(([id,cfg])=>{
-        const el = document.getElementById(id);
-        if(!el) return;
-        let cur=0; const step=cfg.end/40;
-        const t = setInterval(()=>{
-          cur = Math.min(cur+step, cfg.end);
-          el.textContent = Math.floor(cur)+cfg.suffix;
-          if(cur>=cfg.end) clearInterval(t);
-        },40);
-      });
-      ob.disconnect();
-    });
-  },{threshold:0.3});
-  const card = document.getElementById('loc-counter');
-  if(card) ob.observe(card.closest('.gc'));
-})();
-
 // ── particle float keyframe injection ──
 const style=document.createElement('style');
 style.textContent='@keyframes particleFloat{0%{transform:translateY(0) scale(0);opacity:0}15%{opacity:1}85%{opacity:.8}100%{transform:translateY(-80px) scale(1.5) translateX(var(--px));opacity:0}}';
