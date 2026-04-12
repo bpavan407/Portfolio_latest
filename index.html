@@ -275,6 +275,194 @@ footer{padding:36px 72px;border-top:1px solid rgba(79,158,255,0.07);display:flex
 .resume-btn:active{transform:scale(0.97)}
 .resume-icon{width:18px;height:18px;flex-shrink:0}
 .resume-pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);margin-right:2px;animation:pulse 2s ease-in-out infinite}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TABLET (≤ 900px)
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  nav { padding: 16px 28px; }
+  .nav-links { gap: 24px; }
+  .nav-links a { font-size: 10px; letter-spacing: 2px; }
+
+  #hero { padding: 120px 36px 80px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-profile { width: 280px; height: 340px; margin: 0 auto; }
+  .hero-h1 { font-size: clamp(38px, 8vw, 68px); }
+  .hero-role { font-size: clamp(16px, 3.5vw, 26px); }
+  .hero-stats { gap: 36px; }
+
+  #about { padding: 80px 36px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-avatar-scene { height: 240px; }
+  .about-avatar { width: 160px; height: 160px; font-size: 36px; }
+  .about-photo-ring { width: 196px; height: 196px; }
+  .about-photo-ring2 { width: 230px; height: 230px; }
+
+  #projects { padding: 80px 36px; }
+  .pg { grid-template-columns: 1fr; padding: 0 !important; }
+
+  #skills { padding: 80px 36px; }
+  .skills-container { padding: 0; }
+  .skill-cats { flex-wrap: wrap; gap: 0; }
+  .scat { font-size: 10px; padding: 10px 18px; }
+  .skill-bars-grid { grid-template-columns: 1fr; }
+  .tech-badges { gap: 10px; }
+  .hex-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+
+  #education { padding: 80px 36px; }
+  .edu-cert-grid { grid-template-columns: 1fr; padding: 0 !important; }
+
+  #contact { padding: 80px 36px; }
+  .contact-links { flex-direction: column; align-items: center; }
+  .cl-item { width: 100%; max-width: 340px; justify-content: center; }
+
+  footer { padding: 28px 36px; flex-direction: column; gap: 12px; text-align: center; }
+  .fls { margin: 0; }
+  .fls a { margin-left: 16px; }
+
+  .ft1, .ft2, .ft3 { display: none; }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 600px)
+═══════════════════════════════════════ */
+@media (max-width: 600px) {
+  /* Nav */
+  nav { padding: 14px 20px; }
+  .nav-left { gap: 12px; }
+  .logo { font-size: 13px; letter-spacing: 1px; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 9px; letter-spacing: 1px; }
+  .nav-av-wrap { width: 32px; height: 32px; }
+  .nav-av { width: 32px; height: 32px; font-size: 11px; }
+
+  /* Hero */
+  #hero { padding: 110px 20px 72px; }
+  .hero-grid { gap: 36px; }
+  .hero-mono { font-size: 10px; letter-spacing: 2px; }
+  .hero-h1 { font-size: clamp(32px, 10vw, 52px); line-height: 1.05; }
+  .hero-role { font-size: clamp(14px, 4vw, 20px); }
+  .hero-desc { font-size: 14px; }
+  .hero-btns { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .btn-p, .btn-o { padding: 14px 32px; font-size: 11px; }
+  .hero-tags { gap: 8px; }
+  .htag { font-size: 9px; padding: 4px 10px; }
+  .hero-stats { gap: 24px; }
+  .stat-n { font-size: 26px; }
+  .hero-profile { width: 240px; height: 296px; }
+  .ring-outer { inset: -10px; }
+  .ring-inner { inset: -4px; }
+  .profile-badge { padding: 8px 16px; }
+  .badge-name { font-size: 12px; }
+  .badge-role { font-size: 8px; }
+
+  /* About */
+  #about { padding: 64px 20px; }
+  .s-title { font-size: clamp(28px, 7vw, 44px); }
+  .about-p { font-size: 14px; }
+  .exp-card { padding: 20px !important; }
+  .exp-role { font-size: 14px !important; }
+
+  /* Experience Snaphomz card inner */
+  .etag { font-size: 8px; padding: 3px 8px; }
+
+  /* Projects */
+  #projects { padding: 64px 20px; }
+  .pg { padding: 0 !important; gap: 16px; }
+  .gc { padding: 20px; }
+  .proj-title { font-size: 18px; }
+  .proj-top { flex-direction: column; gap: 10px; }
+  .proj-links { flex-wrap: wrap; }
+
+  /* Skills */
+  #skills { padding: 64px 20px; }
+  .skill-cats { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+  .skill-cats::-webkit-scrollbar { height: 2px; }
+  .skill-cats::-webkit-scrollbar-thumb { background: rgba(79,158,255,0.3); }
+  .scat { white-space: nowrap; padding: 10px 14px; font-size: 9px; }
+  .skill-bars-grid { gap: 14px; }
+  .skill-bar-card { padding: 16px 18px; }
+  .sb-name { font-size: 13px; }
+  .tech-badges { gap: 8px; }
+  .tb { padding: 10px 14px; gap: 8px; }
+  .tb-icon { width: 26px; height: 26px; font-size: 15px; }
+  .tb-name { font-size: 12px; }
+  .hex-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .hex-item { padding: 14px 8px; }
+  .hex-icon { font-size: 20px; }
+  .hex-name { font-size: 10px; }
+  .hex-level { font-size: 8px; }
+
+  /* Education */
+  #education { padding: 64px 20px; }
+  .edu-cert-grid { gap: 24px; padding: 0 !important; }
+  .edu-item { flex-direction: column; gap: 6px; }
+  .edu-yr { min-width: auto; }
+
+  /* Marquee */
+  #mq { padding: 36px 0; }
+  .mit { font-size: 10px; letter-spacing: 4px; }
+
+  /* Contact */
+  #contact { padding: 64px 20px; }
+  .ct { font-size: clamp(32px, 9vw, 56px); }
+  .cs { font-size: 14px; }
+  .eb { padding: 16px 28px; font-size: 11px; }
+  .contact-links { gap: 12px; }
+  .cl-item { padding: 13px 20px; font-size: 10px; }
+  .resume-btn { font-size: 11px; padding: 13px 28px; }
+
+  /* Footer */
+  footer { padding: 24px 20px; gap: 10px; }
+  .fl { font-size: 11px; }
+  .fc { font-size: 9px; }
+  .fls a { margin-left: 12px; font-size: 9px; }
+
+  /* Arch SVG */
+  #arch-svg { min-height: 280px; }
+
+  /* Scroll indicator */
+  .scroll-ind { bottom: 20px; }
+
+  /* Code corners on profile - hide on tiny screens */
+  .code-corner { font-size: 7px; }
+  .cc-tr, .cc-br { right: 8px; }
+  .cc-tl, .cc-bl { left: 8px; }
+
+  /* Experience inner tech chips */
+  [style*="min-width:64px"] { min-width: 50px !important; font-size: 7px !important; }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — SMALL MOBILE (≤ 380px)
+═══════════════════════════════════════ */
+@media (max-width: 380px) {
+  .hero-h1 { font-size: 28px; }
+  .hero-profile { width: 200px; height: 250px; }
+  .hex-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 8px; }
+  .logo { font-size: 11px; }
+  .about-avatar { width: 130px; height: 130px; font-size: 30px; }
+  .about-photo-ring { width: 162px; height: 162px; }
+  .about-photo-ring2 { width: 190px; height: 190px; }
+}
+
+
+/* Responsive section padding helper */
+.sec-pad { padding-left: 72px; padding-right: 72px; }
+@media (max-width: 900px) { .sec-pad { padding-left: 36px; padding-right: 36px; } }
+@media (max-width: 600px) { .sec-pad { padding-left: 20px; padding-right: 20px; } }
+
+@media (max-width: 900px) {
+  .hero-grid { justify-items: center; text-align: left; }
+  .hero-profile { order: -1; }
+  .about-grid .rvl { order: 2; }
+  .about-grid .rvr { order: 1; }
+  .sec-pad { padding-left: 36px; padding-right: 36px; }
+  .edu-cert-grid { grid-template-columns: 1fr !important; }
+  .skill-bars-grid { grid-template-columns: 1fr !important; }
+}
 </style>
 </head>
 <body>
@@ -754,11 +942,11 @@ footer{padding:36px 72px;border-top:1px solid rgba(79,158,255,0.07);display:flex
 
 <!-- ══ PROJECTS ══ -->
 <section id="projects">
-  <div style="padding:0 72px;margin-bottom:60px" class="rv">
+  <div style="padding:0 72px;margin-bottom:60px" class="section-header-pad" class="rv">
     <div class="s-eye">Live Production Apps</div>
     <h2 class="s-title syne">What I've <span>Shipped</span></h2>
   </div>
-  <div class="pg" style="padding:0 72px">
+  <div class="pg sec-pad">
 
     <div class="gc rv" style="transition-delay:.05s">
       <div class="proj-top">
@@ -1014,11 +1202,11 @@ footer{padding:36px 72px;border-top:1px solid rgba(79,158,255,0.07);display:flex
 
 <!-- ══ EDUCATION + CERTIFICATIONS ══ -->
 <section id="education">
-  <div style="text-align:center;margin-bottom:60px" class="rv">
+  <div class="rv sec-pad" style="text-align:center;margin-bottom:60px">
     <div class="s-eye">Background</div>
     <h2 class="s-title syne">Education &amp; <span>Certifications</span></h2>
   </div>
-  <div class="edu-cert-grid" style="padding:0 72px">
+  <div class="edu-cert-grid sec-pad">
     <div class="rvl">
       <div class="gc">
         <div class="s-eye" style="margin-bottom:22px">Education</div>
